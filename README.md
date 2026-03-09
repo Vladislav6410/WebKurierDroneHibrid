@@ -1,7 +1,7 @@
 
-# WebKurierVehicleHub — Unified Transport Intelligence for UAV & UGV Platforms
+# WebKurierDroneHibrid — Unified Transport Intelligence for UAV & UGV Platforms
 
-**WebKurierVehicleHub** is the dedicated domain hub for all aerial and ground mobility intelligence in the WebKurier ecosystem.  
+**WebKurierDroneHibrid** is the dedicated domain hub for all aerial and ground mobility intelligence in the WebKurier ecosystem.  
 It integrates UAV flight control, UGV navigation, geodesy, photogrammetry, mission planning, 3D terrain analysis, solar PV planning, telemetry, safety checks, and regulatory compliance into one cohesive engine.
 
 This repository powers:
@@ -25,7 +25,7 @@ VehicleHub is the **transport brain** of the entire WebKurier system.
 ```text
 Level 0 — WebKurierHybrid (orchestrator)
 Level 1 — WebKurierCore (user gateway)
-Level 2 — WebKurierVehicleHub (THIS REPOSITORY)
+Level 2 — WebKurierDroneHibrid (THIS REPOSITORY)
 Level 2 — WebKurierPhoneCore
 Level 2 — WebKurierChain
 Level 2 — WebKurierSecurity
@@ -33,12 +33,12 @@ Level 3 — Mobile Apps
 Level 4 — Public Site
 Level 5 — Future/X Labs
 
-VehicleHub is the primary executor for all mobility, geospatial, and mission-related tasks.
+DroneHibrid is the primary executor for all mobility, geospatial, and mission-related tasks.
 
 Routing example:
 
 User → WebKurierCore Terminal
-     → WebKurierVehicleHub (autopilot/geodesy/missions)
+     → WebKurierDroneHibrid (autopilot/geodesy/missions)
      → Core returns response to user
 
 
@@ -46,7 +46,7 @@ User → WebKurierCore Terminal
 
 2. Repository Structure (High-Level)
 
-WebKurierVehicleHub/
+WebKurierDroneHibrid/
 ├── engine/
 │   ├── autopilot/
 │   │   ├── manual_mode.py
@@ -171,13 +171,13 @@ WebKurierVehicleHub/
 
 With WebKurierCore
 
-Core sends all transport tasks to VehicleHub:
+Core sends all transport tasks to DroneHibrid:
 
-Core → VehicleHub.autopilot
-Core → VehicleHub.geodesy
-Core → VehicleHub.missions
-Core → VehicleHub.pv
-Core → VehicleHub.reports
+Core → DroneHibrid.autopilot
+Core → DroneHibrid.geodesy
+Core → DroneHibrid.missions
+Core → DroneHibrid.pv
+Core → DroneHibrid.reports
 
 With WebKurierPhoneCore
 
@@ -200,7 +200,7 @@ With WebKurierSecurity
 
 5. CI/CD Policy
 
-VehicleHub builds include:
+DroneHibrid builds include:
 	•	Python pipelines
 	•	Node-based visualization modules
 	•	Artifact deployment
@@ -242,7 +242,7 @@ GeoReportAgent — Генератор геоотчётов
 
 7. Governance
 
-WebKurierVehicleHub is maintained under the coordination of:
+WebKurierDroneHibrid is maintained under the coordination of:
 Vladyslav Hushchyn (VladoExport)
 Germany, EU.
 
