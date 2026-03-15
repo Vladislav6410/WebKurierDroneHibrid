@@ -1,0 +1,70 @@
+const API_BASE = "/api/autopilot";
+
+async function parseJsonSafe(response) {
+  const text = await response.text();
+  try {
+    return text ? JSON.parse(text) : {};
+  } catch {
+    return { raw: text };
+  }
+}
+
+export async function getStatus() {
+  const response = await fetch(`${API_BASE}/status`);
+  if (!response.ok) {
+    const err = await parseJsonSafe(response);
+    throw new Error(err.detail || `status failed: ${response.status}`);
+  }
+  return parseJsonSafe(response);
+}
+
+export async function getTelemetry() {
+  const response = await fetch(`${API_BASE}/telemetry/live`);
+  if (!response.ok) {
+    const err = await parseJsonSafe(response);
+    throw new Error(err.detail || `telemetry failed: ${response.status}`);
+  }
+  return parseJsonSafe(response);
+}
+
+export async function buildMission(payload) {
+  const response = await fetch(`${API_BASE}/mission/build`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+
+  if (!response.ok) {
+    const err = await parseJsonSafe(response);
+    throw new Error(err.detail || `build failed: ${response.status}`);
+  }
+  return parseJsonSafe(response);
+}
+
+export async function validateMission(payload) {
+  const response = await fetch(`${API_BASE}/mission/validate`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+
+  if (!response.ok) {
+    const err = await parseJsonSafe(response);
+    throw new Error(err.detail || `validate failed: ${response.status}`);
+  }
+  return parseJsonSafe(response);
+}
+
+export async function uploadMission(payload) {
+  const response = await fetch(`${API_BASE}/mission/upload`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+
+  if (!response.ok) {
+    const err = await parseJsonSafe(response);
+    throw new Error(err.detail || `upload failed: ${response.status}`);
+  }
+  return parseJsonSafe(response);
+}
