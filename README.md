@@ -1,4 +1,3 @@
-
 # WebKurierDroneHibrid — Unified Transport Intelligence for UAV & UGV Platforms
 
 **WebKurierDroneHibrid** is the dedicated domain hub for all aerial and ground mobility intelligence in the WebKurier ecosystem.  
@@ -104,7 +103,24 @@ WebKurierDroneHibrid/
     ├── calibration/
     ├── camera_profiles/
     └── cli_helpers/
-
+WebKurierDroneHybrid/
+└── comms/
+    ├── lte/
+    │   ├── lte-connect.sh
+    │   ├── lte-check.sh
+    │   └── lte.conf
+    │
+    ├── lora/
+    │   ├── lora-agent.py
+    │   └── lora.conf
+    │
+    ├── core/
+    │   ├── comms-manager.py
+    │   ├── heartbeat.py
+    │   └── failover.py
+    │
+    └── api/
+        └── drone-client.py
 
 ⸻
 
