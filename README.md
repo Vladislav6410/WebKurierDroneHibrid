@@ -126,6 +126,29 @@ Drone → Telemetry → GroundStation → Processing → Reports
 ```bash
 bash engine/scripts/start.sh
 
+---
+
+# 🚁 2. Автопилот (MAVLink + QGC)
+
+## 📁 `engine/autopilot/mavlink_config.json`
+
+```json
+{
+  "connection": {
+    "type": "udp",
+    "port": 14550
+  },
+  "vehicle": {
+    "type": "PX4",
+    "mode": "AUTO"
+  },
+  "failsafe": {
+    "rtl": true,
+    "battery": 20
+  }
+}
+
+
 WebKurierGroundStation/
 ├── engine/
 │   ├── autopilot/
