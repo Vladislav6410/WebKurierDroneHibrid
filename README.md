@@ -103,24 +103,26 @@ WebKurierDroneHibrid/
     ├── calibration/
     ├── camera_profiles/
     └── cli_helpers/
-WebKurierDroneHybrid/
-└── comms/
-    ├── lte/
-    │   ├── lte-connect.sh
-    │   ├── lte-check.sh
-    │   └── lte.conf
-    │
-    ├── lora/
-    │   ├── lora-agent.py
-    │   └── lora.conf
-    │
-    ├── core/
-    │   ├── comms-manager.py
-    │   ├── heartbeat.py
-    │   └── failover.py
-    │
-    └── api/
-        └── drone-client.py
+WebKurierGroundStation/
+├── engine/
+│   ├── autopilot/
+│   ├── geodesy/
+│   ├── lidar/
+│   ├── telemetry/
+│   ├── configs/
+│   └── scripts/
+├── data/
+│   ├── missions/
+│   ├── lidar/
+│   ├── photos/
+│   └── outputs/
+├── tools/
+│   ├── odm/
+│   ├── pdal/
+│   └── qgc/
+├── docker/
+├── logs/
+└── README.md
 
 ⸻
 
