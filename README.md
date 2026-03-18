@@ -103,6 +103,29 @@ WebKurierDroneHibrid/
     ├── calibration/
     ├── camera_profiles/
     └── cli_helpers/
+
+🧠 1. README (ядро станции)
+# WebKurier Ground Station
+
+Ground control system for UAV geodesy, LiDAR and photogrammetry.
+
+## Modules
+
+- Autopilot (MAVLink, QGroundControl)
+- Geodesy (GSD, overlap, mission planning)
+- LiDAR (PDAL pipeline)
+- Photogrammetry (ODM)
+- Telemetry (LoRa / MAVLink)
+
+## Data Flow
+
+Drone → Telemetry → GroundStation → Processing → Reports
+
+## Start
+
+```bash
+bash engine/scripts/start.sh
+
 WebKurierGroundStation/
 ├── engine/
 │   ├── autopilot/
